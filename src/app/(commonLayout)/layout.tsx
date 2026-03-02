@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 export default function CommonLayout({
@@ -7,7 +9,12 @@ export default function CommonLayout({
 }>) {
   return (
     <>
-      <div className="bg-amber-600 p-6 text-2xl text-white mb-4">Navbar</div>
+      <div className="bg-amber-600 p-6 text-2xl text-white mb-4 flex justify-between items-center">
+        <h1>Navbar</h1>
+        <Button>
+          <Link href={"/login"}>Login</Link>
+        </Button>
+      </div>
       <div className="min-h-[calc(100vh-232px)]">{children}</div>
       <div>Footer</div>
     </>
