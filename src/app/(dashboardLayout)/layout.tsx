@@ -8,11 +8,11 @@ const RootDashboardLayout = async ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-screen w-screen overflow-hidden">
       {/* Dashboard Sidebar */}
       <DashboardSidebar />
 
-      <div className="flex flex-1 flex-col overflow-hidden">
+      <div className="flex flex-1 flex-col min-w-0 overflow-hidden">
         {/* DashboardNavbar */}
         <DashboardNavbar />
         {/* Dashboard Content */}
