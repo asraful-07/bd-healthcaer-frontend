@@ -1,57 +1,41 @@
-export type Specialty = {
-  id: string;
-  title: string;
-};
+enum Gender {
+  MALE = "MALE",
+  FEMALE = "FEMALE",
+  OTHER = "OTHER",
+}
 
-export type DoctorSpecialty = {
-  id: string;
-  doctorId: string;
-  specialtyId: string;
-  specialty: Specialty;
-};
+export enum UserStatus {
+  ACTIVE = "ACTIVE",
+  BLOCKED = "BLOCKED",
+  DELETED = "DELETED",
+}
 
-export type User = {
-  id: string;
+export interface IDoctor {
+  id: number;
   name: string;
   email: string;
-  emailVerified: boolean;
-  image: string | null;
-};
-
-export type IDoctor = {
-  id: string;
-  name: string;
-  email: string;
-  profilePhoto: string;
-  contactNumber: string;
-
-  address: string;
-  gender: "MALE" | "FEMALE";
-
-  qualification: string;
-  designation: string;
-
-  experience: number;
-  appointmentFee: number;
-  averageRating: number;
-
+  profilePhoto?: string;
+  contactNumber?: string;
+  address?: string;
   registrationNumber: string;
-
+  experience?: number;
+  gender: Gender;
+  appointmentFee: number;
+  qualification: string;
   currentWorkingPlace: string;
-
-  specialties: DoctorSpecialty[];
-
-  user: User;
-  userId: string;
-
-  isDeleted: boolean;
-  deletedAt: string | null;
-
-  createdAt: string;
-  updatedAt: string;
-};
-
-export type DoctorsResponse = {
-  success: boolean;
-  data: IDoctor[];
-};
+  designation: string;
+  averageRating: number;
+  createdAt: Date;
+  user: {
+    status: UserStatus;
+  };
+  specialties: Array<{
+    specialtyId: string;
+    doctorId: string;
+    specialty: {
+      id: string;
+      title: string;
+      icon: string;
+    };
+  }>;
+}
