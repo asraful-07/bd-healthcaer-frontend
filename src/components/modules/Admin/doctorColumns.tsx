@@ -7,7 +7,6 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Star } from "lucide-react";
 
 export const doctorColumns: ColumnDef<IDoctor>[] = [
-  //id or accessorKey is same as the key in the data object
   {
     id: "name",
     accessorKey: "name",
