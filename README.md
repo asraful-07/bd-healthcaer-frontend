@@ -2,6 +2,10 @@
 
 A modern, full-featured healthcare management system built with **Next.js 14**, **TypeScript**, and **React**. This application provides a comprehensive platform for patients, doctors, and administrators to manage healthcare services including appointments, consultations, diagnostics, prescriptions, and health plans.
 
+## 🚀 Live Demo
+
+👉 [https://medicare-point-1bbbf.web.app/](https://medicare-point-1bbbf.web.app/)
+
 ## 🌟 Features
 
 ### For Patients
